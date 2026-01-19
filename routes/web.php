@@ -7,3 +7,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::livewire('/admin/login', 'pages::admin.auth.login')->name('admin.login');
