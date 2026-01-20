@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Enums\UserRole;
 use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Auth;
@@ -71,7 +72,7 @@ new #[Layout('layouts::auth'), Title('Admin Login')] class extends Component
             ]);
         }
 
-        if (! $user->verified) {
+        if (! $user->role->is(UserRole::Admin)) {
             throw ValidationException::withMessages([
                 'email' => __('auth.not_admin'),
             ]);
