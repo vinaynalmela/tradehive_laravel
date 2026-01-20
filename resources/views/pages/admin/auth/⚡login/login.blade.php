@@ -1,4 +1,3 @@
-
 <div>
     <div class="flex flex-col gap-6">
         <div class="flex w-full flex-col text-center">
