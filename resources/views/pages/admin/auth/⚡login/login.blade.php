@@ -26,6 +26,16 @@
                     :placeholder="__('Password')"
                     viewable
                 />
+
+                @if (Route::has('admin.forgot-password'))
+                    <flux:link
+                        class="absolute top-0 text-sm end-0"
+                        :href="route('admin.forgot-password')"
+                        wire:navigate
+                    >
+                        {{ __('Forgot your password?') }}
+                    </flux:link>
+                @endif
             </div>
 
             <!-- Remember Me -->

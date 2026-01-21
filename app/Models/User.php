@@ -40,6 +40,11 @@ final class User extends Authenticatable
             ->implode('');
     }
 
+    public function isAdmin(): bool
+    {
+        return $this->role === UserRole::Admin;
+    }
+
     /**
      * Get the attributes that should be cast.
      *
